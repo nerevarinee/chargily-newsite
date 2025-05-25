@@ -6,8 +6,8 @@ import Footer from "./components/Footer";
 import "./App.css"; // Component-specific styles
 
 // Import all pages
-import { Home } from "./pages/Home.jsx";
-import { Vouchers } from "./pages/Vouchers.jsx";
+import Home from "./pages/Home.jsx";
+import Vouchers from "./pages/Vouchers.jsx";
 import Payments from "./pages/Payments.jsx";
 import Topup from "./pages/Topup";
 import CreditRewards from "./pages/CreditRewards";

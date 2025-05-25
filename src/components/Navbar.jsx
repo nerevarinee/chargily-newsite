@@ -6,8 +6,13 @@ import DropdownMenu from "./DropdownMenu";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">MySite</div>
-
+      <Link to="/" className="navbar-logo">
+        <img
+          src="/src/assets/logo.jpg"
+          alt="MySite Logo"
+          className="navbar-logo-img"
+        />
+      </Link>
       {/* Dropdown menus */}
       <ul className="navbar-links">
         <DropdownMenu
