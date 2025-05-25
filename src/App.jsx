@@ -6,8 +6,9 @@ import Footer from "./components/Footer";
 import "./App.css"; // Component-specific styles
 
 // Import all pages
-import Vouchers from "./pages/Vouchers";
-import Payments from "./pages/Payments";
+import { Home } from "./pages/Home.jsx";
+import { Vouchers } from "./pages/Vouchers.jsx";
+import Payments from "./pages/Payments.jsx";
 import Topup from "./pages/Topup";
 import CreditRewards from "./pages/CreditRewards";
 import ChargilyPay from "./pages/ChargilyPay";
@@ -25,6 +26,7 @@ function App() {
         <div className="content">
           {/* Define routes for each page */}
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/vouchers" element={<Vouchers />} />
             <Route path="/payments" element={<Payments />} />
             <Route path="/topup" element={<Topup />} />
