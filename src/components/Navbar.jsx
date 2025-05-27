@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
-//import "./Navbar.css"; // Optional: separate CSS
 
 function Navbar() {
+  const [language, setLanguage] = useState("EN");
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "EN" ? "FR" : "EN")); // Example switch
+  };
+
   return (
     <nav className="navbar">
+      {/* Left: Logo */}
       <Link to="/" className="navbar-logo">
         <img
           src="/src/assets/logo.jpg"
@@ -13,7 +19,8 @@ function Navbar() {
           className="navbar-logo-img"
         />
       </Link>
-      {/* Dropdown menus */}
+
+      {/* Center: Nav Links */}
       <ul className="navbar-links">
         <DropdownMenu
           title="Personal"
@@ -41,6 +48,22 @@ function Navbar() {
           ]}
         />
       </ul>
+
+      {/* Right: Extra Buttons */}
+      <div className="navbar-extras">
+        <h2 className="navbar-docs">Developer API</h2>
+        <a
+          href="https://example.com/app"
+          className="navbar-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          App
+        </a>
+        <button className="navbar-language" onClick={toggleLanguage}>
+          {language}
+        </button>
+      </div>
     </nav>
   );
 }
