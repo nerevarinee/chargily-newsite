@@ -51,9 +51,18 @@ function Navbar() {
 
       {/* Right: Extra Buttons */}
       <div className="navbar-extras">
-        <h2 className="navbar-docs">Developer API</h2>
+        {" "}
         <a
-          href="https://example.com/app"
+          href="https://app.chargily.com/"
+          className="navbar-docs"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none" }}
+        >
+          Developer API
+        </a>
+        <a
+          href="https://app.chargily.com/"
           className="navbar-app"
           target="_blank"
           rel="noopener noreferrer"

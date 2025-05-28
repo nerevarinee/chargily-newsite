@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 
+//images:
+import DjezzyImg from "../assets/modile-nets/djezzy.png";
+import MobilisImg from "../assets/modile-nets/mobilis.png";
+import OoredooImg from "../assets/modile-nets/ooredoo.png";
+import AtandtImg from "../assets/modile-nets/atandt.jpg";
+import OrangeImg from "../assets/modile-nets/orange.png";
+
 function Topup() {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState("");
@@ -68,16 +75,12 @@ function Topup() {
               >
                 Supported Service Providers
               </p>
-              <div
-                style={{
-                  margin: 10,
-                }}
-              >
-                <img src="..\assets\modile-nets\djezzy.png" alt="dj" />
-                <img src="..\assets\modile-nets\mobilis.png" alt="mob" />
-                <img src="..\assets\modile-nets\ooredoo.png" alt="ore" />
-                <img src="..\assets\modile-nets\atandt.jpg" alt="att" />
-                <img src="..\assets\modile-nets\orange.png" alt="org" />
+              <div style={{}}>
+                <img src={DjezzyImg} alt="Djezzy" className="network-logos" />
+                <img src={MobilisImg} alt="Mobilis" className="network-logos" />
+                <img src={OoredooImg} alt="Ooredoo" className="network-logos" />
+                <img src={AtandtImg} alt="AT&T" className="network-logos" />
+                <img src={OrangeImg} alt="Orange" className="network-logos" />
               </div>
             </div>
           </div>
