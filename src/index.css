@@ -1,3 +1,7 @@
+/* ==========================================================================
+   FONTS & VARIABLES
+   ========================================================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap");
 
 @font-face {
@@ -20,25 +24,32 @@
   --main-color: #641299;
   --border-radius: 18px;
   --button-radius: 25px;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6c757d;
+  --border-gray: #e5e7eb;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 
 body {
   font-family: var(--main-font);
   margin: 0 180px;
 }
 
-.network-logos {
-  height: 65px;
-  width: auto;
-  margin-right: 13px;
-  margin-left: 12px;
-}
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
 .navbar {
   background-color: white;
   color: var(--main-color);
   margin-top: 10px;
-  padding: 0px 30px;
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,10 +62,8 @@ body {
   display: flex;
   gap: 2rem;
   list-style: none;
-  margin-right: 100px;
+  margin: 5px 100px 5px 0;
   font-weight: 600;
-  margin-bottom: 5px;
-  margin-top: 5px;
 }
 
 .navbar-logo-img {
@@ -71,9 +80,9 @@ body {
 
 .navbar-docs {
   font-size: 1.3rem;
-  font-weight: 10 * 800;
+  font-weight: bold;
   color: var(--main-color);
-  margin: 0 180px 0 0;
+  margin-right: 180px;
 }
 
 .navbar-app {
@@ -83,7 +92,8 @@ body {
   border: 2px solid var(--main-color);
   border-radius: var(--button-radius);
   text-decoration: none;
-  margin: 1px 200px 0 0;
+  margin-right: 200px;
+  transition: all 0.2s ease;
 }
 
 .navbar-app:hover {
@@ -100,34 +110,34 @@ body {
   cursor: pointer;
 }
 
-/* Enhanced Dropdown Menu Styles */
+.network-logos {
+  height: 65px;
+  width: auto;
+  margin: 0 13px 0 12px;
+}
 
-/* Dropdown container */
+/* ==========================================================================
+   DROPDOWN MENU
+   ========================================================================== */
+
 .dropdown {
   position: relative;
   cursor: pointer;
 }
 
-/* Dropdown title/trigger */
 .dropdown-title {
   display: flex;
   align-items: center;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  padding: 7px 10px;
+  margin: 2px 0;
   color: var(--main-color);
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.2s ease;
   border: 2px solid var(--main-color);
   border-radius: 25px;
-  position: relative;
 }
 
-/* Add arrow indicator */
 .dropdown-title::after {
   content: "";
   width: 0;
@@ -139,18 +149,15 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* Rotate arrow on hover */
 .dropdown:hover .dropdown-title::after {
   transform: rotate(180deg);
 }
 
-/* Hover effect for dropdown title */
 .dropdown:hover .dropdown-title {
   background-color: #f8f4ff;
   color: #4c1d95;
 }
 
-/* Dropdown menu container */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -158,9 +165,9 @@ body {
   min-width: 200px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e5e7eb;
-  padding: 0.5rem 0;
+  box-shadow: var(--shadow-heavy);
+  border: 1px solid var(--border-gray);
+  padding: 8px 0 0.5rem 0;
   margin: 0;
   list-style: none;
   z-index: 1000;
@@ -168,25 +175,19 @@ body {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.2s ease;
-  /* Add padding-top to bridge the gap */
-  padding-top: 8px;
-  margin-top: 0;
 }
 
-/* Show dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* Dropdown menu items */
 .dropdown-menu li {
   margin: 0;
   padding: 0;
 }
 
-/* Dropdown item links */
 .dropdown-item {
   display: block;
   padding: 0.75rem 1.25rem;
@@ -198,7 +199,6 @@ body {
   border-left: 3px solid transparent;
 }
 
-/* Hover effect for dropdown items */
 .dropdown-item:hover {
   background-color: #f8f4ff;
   color: var(--main-color);
@@ -206,7 +206,6 @@ body {
   padding-left: 1.5rem;
 }
 
-/* First and last item rounded corners */
 .dropdown-menu li:first-child .dropdown-item {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -217,7 +216,7 @@ body {
   border-bottom-right-radius: 8px;
 }
 
-/* Add subtle animation delay for items */
+/* Animation delays for dropdown items */
 .dropdown-menu li:nth-child(1) .dropdown-item {
   animation-delay: 0.05s;
 }
@@ -231,82 +230,13 @@ body {
   animation-delay: 0.2s;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: fixed;
-    left: 1rem;
-    right: 1rem;
-    min-width: auto;
-    width: auto;
-  }
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 
-  .dropdown-title {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
-  }
-
-  .dropdown-item {
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-  }
-}
-
-/* Alternative style with icons (if you want to add icons later) */
-.dropdown-item-with-icon {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.dropdown-item-icon {
-  width: 16px;
-  height: 16px;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.dropdown-item:hover .dropdown-item-icon {
-  opacity: 1;
-}
-
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
-  .dropdown-menu {
-    background: #1f2937;
-    border-color: #374151;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  }
-
-  .dropdown-item {
-    color: #d1d5db;
-  }
-
-  .dropdown-item:hover {
-    background-color: #374151;
-    color: white;
-  }
-}
-
-/* Focus styles for accessibility */
-.dropdown-title:focus,
-.dropdown-item:focus {
-  outline: 2px solid var(--main-color);
-  outline-offset: 2px;
-}
-
-/* Smooth backdrop blur effect (modern browsers) */
-@supports (backdrop-filter: blur(10px)) {
-  .dropdown-menu {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
-  }
-}
-
-/* Footer */
-/* Footer Styles */
+/* Footer Styles - Updated Layout */
 .footer {
-  background: linear-gradient(135deg, #641299 0%, #7c3aed 100%);
+  background: linear-gradient(150deg, #641299 0%, rgb(143, 107, 206) 100%);
   color: white;
   margin-top: 4rem;
   position: relative;
@@ -328,39 +258,189 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>')
-    repeat;
   pointer-events: none;
 }
 
 .footer-container {
+  width: 1400px;
+  left: 45px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem 1rem;
+  padding-right: 25px;
+  padding-left: 5px;
+  padding-top: 35px;
+  padding-buttom: 20xp;
   position: relative;
   z-index: 1;
 }
 
-/* Top Section */
+/* Top Section - Footer links on left, download buttons on right */
 .footer-top {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
   gap: 3rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Brand Section */
-.footer-brand {
+/* Footer Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.footer-column {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+.footer-column-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-family: var(--big-font);
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.footer-list li {
+  margin: 0;
+}
+
+.footer-list a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-list a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: width 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer-list a:hover::before {
+  width: 100%;
+}
+
+/* Download Section - Top Right */
+.footer-download-section {
+  display: flex;
+  padding-left: 150px;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.footer-download-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.download-btn {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-left: 25px;
+  padding-right: 0px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 100px;
+}
+
+.download-btn-wa {
+  padding-left: 45px;
+  padding-right: 0px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  min-width: 100px;
+}
+
+.download-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn-wa:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn svg {
+  flex-shrink: 0;
+}
+
+/* Bottom Section - Brand on left, copyright on right */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 2rem;
+}
+
+/* Brand Section - Bottom Left */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 350px;
+}
+
 .footer-logo {
   display: inline-block;
   text-decoration: none;
+  width: fit-content;
 }
 
 .footer-logo-img {
@@ -379,7 +459,6 @@ body {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  max-width: 300px;
 }
 
 /* Social Links */
@@ -417,89 +496,17 @@ body {
   transform: scale(1.1);
 }
 
-/* Footer Links */
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.footer-column {
+/* Copyright - Bottom Right */
+.footer-copyright {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer-column-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: white;
-  margin: 0 0 0.5rem 0;
-  font-family: var(--big-font);
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-list li {
-  margin: 0;
-}
-
-.footer-list a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  display: inline-block;
-  position: relative;
-}
-
-.footer-list a::before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.6);
-  transition: width 0.3s ease;
-}
-
-.footer-list a:hover {
-  color: white;
-  transform: translateX(5px);
-}
-
-.footer-list a:hover::before {
-  width: 100%;
-}
-
-/* Bottom Section */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
 }
 
-.footer-bottom-left p,
-.footer-bottom-right p {
+.footer-copyright p {
   margin: 0;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-bottom-right p {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 /* Responsive Design */
@@ -516,6 +523,16 @@ body {
   .footer-links {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  .footer-download-section {
+    align-items: center;
+  }
+
+  .footer-download-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -535,7 +552,24 @@ body {
     text-align: center;
   }
 
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
   .footer-social {
+    justify-content: center;
+  }
+
+  .footer-download-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .download-btn {
+    min-width: auto;
+    width: 100%;
     justify-content: center;
   }
 }
@@ -564,13 +598,15 @@ body {
   .footer-description {
     font-size: 0.9rem;
   }
-}
 
-/* Page style */
-.page h1 {
+  .download-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
 }
-
-//topup css:
+/* ==========================================================================
+   TOPUP COMPONENTS
+   ========================================================================== */
 
 .page {
   display: flex;
@@ -587,24 +623,25 @@ body {
 }
 
 .header h1 {
-  color: #641299;
+  color: var(--main-color);
   margin: 0 0 1rem 0;
 }
 
 .card {
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .card h2 {
-  color: #641299;
+  color: var(--main-color);
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
 }
 
+/* Amount Selection */
 .amount-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -622,12 +659,13 @@ body {
   font-weight: bold;
   color: #333;
   background-color: white;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-gray);
+  transition: all 0.2s ease;
 }
 
 .amount-button.selected {
   background-color: #f3e8ff;
-  border-color: #641299;
+  border-color: var(--main-color);
 }
 
 .popular-badge {
@@ -642,6 +680,7 @@ body {
   border-radius: 12px;
 }
 
+/* Form Elements */
 .label {
   display: block;
   font-size: 0.9rem;
@@ -666,35 +705,36 @@ body {
 
 .input-field {
   width: 383px;
-  padding: 12px 16px;
-  padding-left: 52px;
-  border: 2px solid #e5e7eb;
+  padding: 12px 16px 12px 52px;
+  border: 2px solid var(--border-gray);
   border-radius: 12px;
   font-size: 1.1rem;
   outline: none;
+  transition: border-color 0.2s ease;
 }
 
 .input-field:focus {
-  border-color: #641299;
+  border-color: var(--main-color);
+}
+
+.phone-input {
+  width: 420px;
+  padding: 12px 16px;
+  border: 2px solid var(--border-gray);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.phone-input:focus {
+  border-color: var(--main-color);
 }
 
 .helper-text {
   font-size: 0.8rem;
   color: #666;
   margin-top: 0.5rem;
-}
-
-.phone-input {
-  width: 420px;
-  padding: 12px 16px;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  outline: none;
-}
-
-.phone-input:focus {
-  border-color: #641299;
 }
 
 .continue-btn {
@@ -705,11 +745,483 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
+  background-color: var(--main-color);
   cursor: pointer;
-  background-color: #641299;
+  transition: all 0.2s ease;
 }
 
 .continue-btn:disabled {
   background-color: #d1d5db;
   cursor: not-allowed;
+}
+
+/* ==========================================================================
+   PAYMENT METHODS PAGE
+   ========================================================================== */
+
+.payment-methods-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 2rem 0;
+}
+
+.payment-methods-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.payment-methods-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.payment-methods-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.payment-methods-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Payment Method Cards */
+.payment-method-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.payment-method-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.main-card {
+  background: linear-gradient(135deg, #6366f1 0%, var(--main-color) 100%);
+  color: white;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.card-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Payment Icons */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.payment-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.payment-icon.visa {
+  background: #1a1f71;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.payment-icon.mastercard {
+  background: #eb001b;
+  color: #ff5f00;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Payment Method Buttons */
+.get-chargily-btn {
+  background: white;
+  color: var(--main-color);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--button-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.get-chargily-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn {
+  background: var(--main-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #7c1ac4;
+  transform: translateY(-1px);
+}
+
+/* Card Content Layout */
+.card-content-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 300px;
+}
+
+.card-content-horizontal.reverse .card-text {
+  order: 1;
+}
+
+.card-content-horizontal.reverse .card-image {
+  order: 2;
+}
+
+.card-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.card-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+/* Mockup Styles */
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.phone-mockup,
+.mobile-device {
+  width: 180px;
+  height: 320px;
+  background: #1f2937;
+  border-radius: 24px;
+  padding: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.phone-screen,
+.device-screen {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border: 2px solid var(--border-gray);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-pattern {
+  width: 100px;
+  height: 100px;
+  background-image: repeating-linear-gradient(
+      0deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  opacity: 0.8;
+}
+
+.payment-form {
+  width: 90%;
+  height: 80%;
+  padding: 1rem;
+}
+
+.form-header {
+  height: 40px;
+  background: var(--main-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-field {
+  height: 30px;
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.form-button {
+  height: 40px;
+  background: var(--main-color);
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & MODERN BROWSER SUPPORT
+   ========================================================================== */
+
+.dropdown-title:focus,
+.dropdown-item:focus {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .dropdown-menu {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .footer-container {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Dropdown Mobile */
+  .dropdown-menu {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+    width: auto;
+  }
+
+  .dropdown-title {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-item {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  /* Footer Mobile */
+  .footer-container {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-social,
+  .download-buttons {
+    justify-content: center;
+  }
+
+  /* Payment Methods Mobile */
+  .payment-methods-container {
+    padding: 0 0.5rem;
+  }
+
+  .payment-methods-header h1 {
+    font-size: 2rem;
+  }
+
+  .main-card {
+    padding: 2rem 1rem;
+  }
+
+  .card-content-horizontal {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .card-content-horizontal.reverse .card-text {
+    order: 2;
+  }
+
+  .card-content-horizontal.reverse .card-image {
+    order: 1;
+  }
+
+  .payment-icons {
+    gap: 1rem;
+  }
+
+  .payment-icon {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .phone-mockup,
+  .mobile-device {
+    width: 140px;
+    height: 250px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 1.5rem 0.75rem 1rem;
+  }
+
+  .footer-top {
+    gap: 2rem;
+  }
+
+  .footer-column {
+    gap: 0.75rem;
+  }
+
+  .footer-column-title {
+    font-size: 0.95rem;
+  }
+
+  .footer-list a,
+  .footer-description {
+    font-size: 0.85rem;
+  }
+
+  .download-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    min-width: 100px;
+  }
+
+  .payment-methods-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .main-card {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .card-content-horizontal {
+    padding: 1rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .dropdown-menu {
+    background: #1f2937;
+    border-color: #374151;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .dropdown-item {
+    color: #d1d5db;
+  }
+
+  .dropdown-item:hover {
+    background-color: #374151;
+    color: white;
+  }
 }
