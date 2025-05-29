@@ -35,7 +35,7 @@ function Navbar() {
           title="Business"
           items={[
             { label: "Chargily Pay", path: "/chargily-pay" },
-            { label: "Payment Links", path: "/payment-links" },
+            { label: "Payment Methods", path: "/payment-links" },
             { label: "Fees & Pricing", path: "/fees-pricing" },
           ]}
         />
