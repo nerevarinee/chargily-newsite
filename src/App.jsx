@@ -12,7 +12,7 @@ import Payments from "./pages/Payments.jsx";
 import Topup from "./pages/Topup";
 import CreditRewards from "./pages/CreditRewards";
 import ChargilyPay from "./pages/ChargilyPay";
-import PaymentLinks from "./pages/PaymentLinks";
+import PaymentLinks from "./pages/PaymentMethods.jsx";
 import FeesPricing from "./pages/FeesPricing";
 import AboutUs from "./pages/AboutUs";
 import Careers from "./pages/Careers";
