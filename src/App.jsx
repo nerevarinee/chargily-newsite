@@ -3,7 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "./App.css"; // Component-specific styles
+import "./App.css";
+import "leaflet/dist/leaflet.css";
 
 // Import all pages
 import Home from "./pages/Home.jsx";
