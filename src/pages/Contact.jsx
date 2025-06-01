@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MapComponent from "../components/MapComponent";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ function Contact() {
       title: "Phone Support",
       description: "Speak directly with our support team",
       contact: "+213 555 123 456",
-      availability: "Mon-Fri, 9AM-6PM",
+      availability: "Sun-Tue, 9AM-5PM",
     },
     {
       icon: "✉️",
@@ -64,8 +65,8 @@ function Contact() {
       icon: "📍",
       title: "Visit Our Office",
       description: "Meet us in person",
-      contact: "123 Tech Street, Algiers",
-      availability: "Mon-Fri, 9AM-5PM",
+      contact: "Cite Amdinistrative, M'Sila",
+      availability: "Sun-Tue, 9AM-5PM",
     },
   ];
 
@@ -251,9 +252,9 @@ function Contact() {
             <div className="address">
               <h4>Chargily Headquarters</h4>
               <p>
-                123 Technology Street
+                Cite Administrative
                 <br />
-                Algiers 16000
+                M'Sila 28000
                 <br />
                 Algeria
               </p>
@@ -262,9 +263,7 @@ function Contact() {
             <div className="office-hours">
               <h4>Office Hours</h4>
               <p>
-                Monday - Friday: 9:00 AM - 6:00 PM
-                <br />
-                Saturday: 10:00 AM - 4:00 PM
+                Sunday - Tuesday: 9:00 AM - 5:00 PM
                 <br />
                 Sunday: Closed
               </p>
@@ -278,7 +277,7 @@ function Contact() {
           <div className="map-placeholder">
             <div className="map-content">
               <span>Interactive Map</span>
-              <p>📍 Chargily Office Location</p>
+              <MapComponent />
             </div>
           </div>
         </div>
