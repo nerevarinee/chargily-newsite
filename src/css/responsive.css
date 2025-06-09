@@ -1,0 +1,98 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .footer-container,
+  .contact-hero,
+  .contact-methods,
+  .contact-form-section,
+  .faq-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .location-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom,
+  .card-content-horizontal,
+  .faq-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+
+  .card-content-horizontal {
+    text-align: center;
+  }
+
+  .location-info h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .footer-column-title,
+  .footer-list a,
+  .footer-description {
+    font-size: 0.85rem;
+  }
+
+  .card-header h2,
+  .contact-hero h1,
+  .form-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .submit-btn,
+  .directions-btn {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .card,
+  .contact-form {
+    border: 2px solid black;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px black;
+  }
+}
