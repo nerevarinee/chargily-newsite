@@ -83,36 +83,16 @@ function Topup() {
     <div className="page">
       <div className="container">
         {/* Header */}
-        <div className="header">
-          <h1>Top-up Service</h1>
-          <div className="intro-section">
-            <p className="intro-text">
-              Easily recharge your mobile phone credit and send top-ups to
-              friends and family. whatever your operateur is, Djezzy, Ooredoo or
-              Mobilis. Additionally, conveniently send game shipments like Free
-              Fire, PUBG Mobile using only your player ID! Ensure your phone is
-              always connected.
+        <section className="topup-hero">
+          <div className="container">
+            <h1>Instant Mobile Top-Up</h1>
+            <p>
+              Recharge your phone or send credit to loved ones, across all major
+              networks — Djezzy, Ooredoo, Mobilis and more. Fast, secure, and
+              available 24/7.
             </p>
-            <div className="features-list">
-              <div className="feature-item">
-                <span className="feature-icon">⚡</span>
-                <span>Instant top-up</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">🔒</span>
-                <span>Secure payments</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">📱</span>
-                <span>All networks supported</span>
-              </div>
-              <div className="feature-item">
-                <span className="feature-icon">💳</span>
-                <span>Multiple payment options</span>
-              </div>
-            </div>
           </div>
-        </div>
+        </section>
 
         <div class="topup-container">
           <div

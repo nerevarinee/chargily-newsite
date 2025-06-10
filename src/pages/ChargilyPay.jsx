@@ -1,10 +1,273 @@
 import React from "react";
 
+import dbMock from "../assets/checkout.png";
+
 function ChargilyPay() {
   return (
-    <div className="page">
-      <h1>ChargilyPay</h1>
-      <p>This is the ChargilyPay page. You can customize this content.</p>
+    <div className="chargily-pay-page">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Do business with Chargily Pay</h1>
+            <p>
+              Accept more payment methods through the app, online, and in
+              person, tapping into an active community with millions of
+              potential customers.
+            </p>
+            <button className="get-started-btn">Get Started</button>
+          </div>
+          {/*<div className="hero-image">
+              
+            <div className="dashboard-mockup">
+              <div className="dashboard-header">
+                <div className="dashboard-nav">
+                  <span>Dashboard</span>
+                  <span>Analytics</span>
+                  <span>Payments</span>
+                  <span>Settings</span>
+                </div>
+              </div>
+              <div className="dashboard-content">
+                <div className="stats-cards">
+                  <div className="stat-card">
+                    <h3>Total Revenue</h3>
+                    <p className="stat-number">$24,567</p>
+                  </div>
+                  <div className="stat-card">
+                    <h3>Transactions</h3>
+                    <p className="stat-number">1,234</p>
+                  </div>
+                </div>
+                <div className="transaction-list">
+                  <div className="transaction-item">
+                    <div className="transaction-icon"></div>
+                    <div className="transaction-details">
+                      <span>Payment received</span>
+                      <span className="amount">+$89.00</span>
+                    </div>
+                  </div>
+                  <div className="transaction-item">
+                    <div className="transaction-icon"></div>
+                    <div className="transaction-details">
+                      <span>Payment received</span>
+                      <span className="amount">+$156.00</span>
+                    </div>
+                  </div>
+                </div>
+                <button className="continue-btn">Continue</button>
+              </div>
+            </div>
+          </div>*/}
+        </div>
+      </section>
+      <div>
+        <img
+          style={{
+            margin: "0px 130px 50px",
+          }}
+          src={dbMock}
+          alt="DashBoard"
+        />
+      </div>
+      {/* Accept Chargily Section */}
+      <section className="accept-section">
+        <div className="section-content">
+          <div className="section-image">
+            <div className="laptop-mockup">
+              <div className="laptop-screen">
+                <div className="online-store">
+                  <div className="store-header">
+                    <span>tarlet</span>
+                    <div className="store-nav">
+                      <span>Shop</span>
+                      <span>Journal</span>
+                      <span>About us</span>
+                      <span>Contact</span>
+                    </div>
+                  </div>
+                  <div className="shopping-cart">
+                    <h2>Shopping Cart.</h2>
+                    <div className="cart-items">
+                      <div className="cart-item">
+                        <div className="item-image orange"></div>
+                        <span>Sandqvist</span>
+                        <span>$110.99</span>
+                      </div>
+                      <div className="cart-item">
+                        <div className="item-image green"></div>
+                        <span>Sandqvist</span>
+                        <span>$159.99</span>
+                      </div>
+                    </div>
+                    <div className="cart-total">
+                      <span>Total: $470.98</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="credit-card">
+                <div className="card-stripe"></div>
+                <div className="card-chip"></div>
+                <div className="card-number">•••• •••• ••••</div>
+                <div className="mastercard-logo">
+                  <div className="circle red"></div>
+                  <div className="circle yellow"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="section-text">
+            <h2>Accept Chargily in your apps and Online.</h2>
+            <p>
+              Use our prebuilt checkout page, or integrate our JavaScript SDK
+              for a seamless, scalable experience. Develop an online
+              marketplace, on-demand service, or ecommerce store. We make it
+              easy for you to get started.
+            </p>
+            <button className="learn-more-btn">Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Links Section */}
+      <section className="payment-links-section">
+        <div className="section-content">
+          <div className="section-text">
+            <h2>No online store needed. Simplify payments with links</h2>
+            <p>
+              Share a direct payment link with your customers. No coding or
+              technical setup required. Perfect for social media selling, email
+              campaigns, or any situation where you need a quick way to request
+              payment from customers.
+            </p>
+            <button className="learn-more-btn">Learn More</button>
+          </div>
+          <div className="section-image">
+            <div className="mobile-mockup">
+              <div className="mobile-screen">
+                <div className="mobile-card">
+                  <div className="card-visual">
+                    <div className="card-bg"></div>
+                    <div className="card-stripe-mobile"></div>
+                    <div className="card-details">
+                      <div className="card-lines">
+                        <div className="line long"></div>
+                        <div className="line medium"></div>
+                        <div className="line short"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="link-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Methods Section */}
+      <section className="payment-methods-section">
+        <div className="section-content-center">
+          <h2>We Accept Multiple payment Methods</h2>
+          <div className="payment-icons">
+            <div className="payment-icon paypal">
+              <span>PayPal</span>
+            </div>
+            <div className="payment-icon facebook">
+              <span>f</span>
+            </div>
+            <div className="payment-icon visa">
+              <span>VISA</span>
+            </div>
+            <div className="payment-icon mastercard">
+              <div className="mc-circle red"></div>
+              <div className="mc-circle yellow"></div>
+            </div>
+          </div>
+          <button className="get-started-btn">Get Started</button>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="section-content-center">
+          <h2>Transparent Pricing: No Subscription, No Hidden Fees</h2>
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3>Better End of Payment</h3>
+              <p>Streamlined checkout process for better user experience</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <h3>Fast API Responses</h3>
+              <p>Lightning-fast payment processing and real-time updates</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="8.5" cy="7" r="4"></circle>
+                  <path d="M20 8v6M23 11h-6"></path>
+                </svg>
+              </div>
+              <h3>Easy Account User Management</h3>
+              <p>Simple dashboard for managing customers and transactions</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3>Free & Open Source Plugins</h3>
+              <p>Access to comprehensive plugin library at no extra cost</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
