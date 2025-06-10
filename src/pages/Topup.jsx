@@ -24,7 +24,7 @@ function Topup() {
 
   const faqData = [
     {
-      question: "How long does it take for the top-up to be processed?",
+      question: "What is a top-up?",
       answer:
         "Most top-ups are processed instantly. In rare cases, it may take up to 5 minutes during peak hours or network maintenance.",
     },
@@ -87,9 +87,11 @@ function Topup() {
           <h1>Top-up Service</h1>
           <div className="intro-section">
             <p className="intro-text">
-              Instantly recharge your mobile phone or top-up any number in
-              Algeria. Our secure and fast top-up service supports all major
-              network providers including Djezzy, Mobilis, Ooredoo, and more.
+              Easily recharge your mobile phone credit and send top-ups to
+              friends and family. whatever your operateur is, Djezzy, Ooredoo or
+              Mobilis. Additionally, conveniently send game shipments like Free
+              Fire, PUBG Mobile using only your player ID! Ensure your phone is
+              always connected.
             </p>
             <div className="features-list">
               <div className="feature-item">

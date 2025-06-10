@@ -7,10 +7,7 @@ function FeesPricing() {
       price: "Free",
       description: "Perfect for small businesses getting started",
       features: [
-        "0% commission",
-        "300 000 D-D (Max/month)",
-        "300 transactions permonth",
-        "1 Free payout per month",
+        "Up to 100 transactions/month",
         "Basic payment processing",
         "Standard support",
         "Basic analytics",
@@ -21,14 +18,14 @@ function FeesPricing() {
     },
     {
       name: "Professional",
-      price: "1.25%",
+      price: "$29",
+      period: "/month",
       description: "Ideal for growing businesses",
       features: [
-        "1.25% commission",
-        "Unlimited number of trasactions",
-        "Unlimited Amount of money trasacted",
+        "Up to 1,000 transactions/month",
+        "Advanced payment processing",
+        "Priority support",
         "Advanced analytics & reporting",
-        "1 Free payout per month",
         "Custom checkout design",
         "Payment links",
         "Recurring payments",
@@ -38,15 +35,15 @@ function FeesPricing() {
     },
     {
       name: "Enterprise",
-      price: "2.5%",
+      price: "Custom",
       description: "For large-scale operations",
       features: [
-        "2.5% commission",
-        "Unlimited number of trasactions",
-        "Unlimited Amount of money trasacted",
+        "Unlimited transactions",
+        "White-label solutions",
+        "Dedicated account manager",
         "Custom integrations",
         "Advanced security features",
-        "Unlimited number Free payout per month",
+        "SLA guarantee",
         "24/7 phone support",
       ],
       highlighted: false,
@@ -195,42 +192,95 @@ function FeesPricing() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Commercial Offer Download */}
+      <section className="commercial-offer">
+        <div className="container">
+          <div className="offer-card">
+            <h2>Need a Detailed Commercial Offer?</h2>
+            <p>
+              Download our comprehensive commercial offer document with detailed
+              pricing, terms, and conditions.
+            </p>
+            <button
+              className="download-btn-pdf"
+              onClick={() =>
+                window.open("/assets/chargily-commercial-offer.pdf", "_blank")
+              }
+            >
+              <span className="download-icon">📄</span>
+              Download Commercial Offer PDF
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section 
       <section className="pricing-faq">
         <div className="container">
           <h2>Frequently Asked Questions</h2>
           <div className="faq-grid">
             <div className="faq-item">
-              <h4>Are there any hidden fees?</h4>
+              <h4>What are the transaction fees for domestic payments?</h4>
               <p>
-                No, we believe in transparent pricing. All fees are clearly
-                stated with no hidden charges.
+                For online payments and payment links, we charge 2.9% + 30 DZD.
+                Vouchers are 1.5% + 15 DZD, and top-up services are 1.0% with a
+                minimum of 10 DZD.
               </p>
             </div>
             <div className="faq-item">
-              <h4>Can I change my plan anytime?</h4>
+              <h4>How do payouts work?</h4>
               <p>
-                Yes, you can upgrade or downgrade your plan at any time. Changes
-                take effect immediately.
+                You get a certain number of free payouts each month. After
+                exceeding the limit, a 1.5% commission applies (minimum 150 DA)
+                on withdrawal amounts.
               </p>
             </div>
             <div className="faq-item">
-              <h4>Do you offer refunds?</h4>
+              <h4>Are there any setup or monthly fees?</h4>
               <p>
-                We offer a 30-day money-back guarantee for all paid plans. No
-                questions asked.
+                No setup fees or monthly minimums. You only pay for successful
+                transactions and payouts beyond your free allocation.
               </p>
             </div>
             <div className="faq-item">
-              <h4>What payment methods do you accept?</h4>
+              <h4>Can I upgrade my plan if I exceed transaction limits?</h4>
               <p>
-                We accept all major credit cards, bank transfers, and local
-                Algerian payment methods.
+                Yes, contact us when you exceed your current plan's limits to
+                upgrade to our Comfort or Supreme offers for better rates.
+              </p>
+            </div>
+            <div className="faq-item">
+              <h4>What payment methods do you support?</h4>
+              <p>
+                We support all major Algerian payment methods including CIB,
+                EDAHABIA, credit cards, and bank transfers.
+              </p>
+            </div>
+            <div className="faq-item">
+              <h4>How quickly are funds transferred to my account?</h4>
+              <p>
+                Payouts are processed within 24-48 hours to your registered bank
+                account, depending on your bank's processing time.
+              </p>
+            </div>
+            <div className="faq-item">
+              <h4>Is there a minimum or maximum payout amount?</h4>
+              <p>
+                Commission minimums vary: 12.5 DA to 1250 DA maximum, or 25 DA
+                to 2500 DA maximum, depending on your plan tier.
+              </p>
+            </div>
+            <div className="faq-item">
+              <h4>Do you offer customer support?</h4>
+              <p>
+                Yes, we provide email support for all plans, priority support
+                for Professional plans, and dedicated account managers for
+                Enterprise clients.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <section className="pricing-cta">
@@ -260,8 +310,9 @@ function FeesPricing() {
           background: linear-gradient(
             135deg,
             var(--main-color) 0%,
-            #8e44ad 100%
+            #8f6bce 100%
           );
+          border-radius: 25px;
           color: white;
           padding: 4rem 0;
           text-align: center;
@@ -528,6 +579,60 @@ function FeesPricing() {
           margin-bottom: 1rem;
         }
 
+        /* Commercial Offer Section */
+        .commercial-offer {
+          padding: 4rem 0;
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .offer-card {
+          background: white;
+          padding: 3rem;
+          border-radius: var(--border-radius);
+          text-align: center;
+          box-shadow: var(--shadow-medium);
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .offer-card h2 {
+          color: var(--main-color);
+          margin-bottom: 1rem;
+          font-family: var(--big-font);
+        }
+
+        .offer-card p {
+          color: var(--medium-gray);
+          margin-bottom: 2rem;
+          font-size: 1.125rem;
+        }
+
+        .download-btn-pdf {
+          background: var(--main-color);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: var(--button-radius);
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          min-width: 300px;
+        }
+
+        .download-btn-pdf:hover {
+          background: #5a0f87;
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-medium);
+        }
+
+        .download-icon {
+          font-size: 1.25rem;
+        }
+
         /* FAQ */
         .pricing-faq {
           padding: 4rem 0;
@@ -558,7 +663,12 @@ function FeesPricing() {
 
         /* CTA Section */
         .pricing-cta {
-          background: var(--main-color);
+          background: linear-gradient(
+            135deg,
+            var(--main-color) 0%,
+            #8f6bce 100%
+          );
+          border-radius: 20px;
           color: white;
           padding: 4rem 0;
           text-align: center;
