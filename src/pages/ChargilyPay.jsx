@@ -1,6 +1,10 @@
 import React from "react";
 
 import dbMock from "../assets/checkout.png";
+import APimage from "../assets/AlgeriePoste.png";
+import Visaimage from "../assets/Visa.png";
+import MCimage from "../assets/mastercard.jpg";
+import BPimage from "../assets/baridipay.png";
 
 function ChargilyPay() {
   return (
@@ -179,20 +183,19 @@ function ChargilyPay() {
       {/* Payment Methods Section */}
       <section className="payment-methods-section">
         <div className="section-content-center">
-          <h2>We Accept Multiple payment Methods</h2>
-          <div className="payment-icons">
-            <div className="payment-icon paypal">
-              <span>PayPal</span>
+          <h2>We Accept Multiple Payment Methods</h2>
+          <div className="payment-icons-cp">
+            <div className="payment-icon-cp">
+              <img src={APimage} alt="Algerie Poste" />
             </div>
-            <div className="payment-icon facebook">
-              <span>f</span>
+            <div className="payment-icon-cp">
+              <img src={Visaimage} alt="Visa" />
             </div>
-            <div className="payment-icon visa">
-              <span>VISA</span>
+            <div className="payment-icon-cp">
+              <img src={BPimage} alt="Baridi Pay" />
             </div>
-            <div className="payment-icon mastercard">
-              <div className="mc-circle red"></div>
-              <div className="mc-circle yellow"></div>
+            <div className="payment-icon-cp">
+              <img src={MCimage} alt="Mastercard" />
             </div>
           </div>
           <button className="get-started-btn">Get Started</button>
@@ -207,48 +210,70 @@ function ChargilyPay() {
             <div className="feature-card">
               <div className="feature-icon">
                 <svg
-                  viewBox="0 0 24 24"
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
                   fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 10h18M6 14h2m3 0h5M3 7v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Z"
+                  />
                 </svg>
               </div>
-              <h3>Better End of Payment</h3>
+              <h3>Unlimited Number of Payouts</h3>
               <p>Streamlined checkout process for better user experience</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
                 <svg
-                  viewBox="0 0 24 24"
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
                   fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 6v6l4 2"></path>
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
+                  />
                 </svg>
               </div>
-              <h3>Fast API Responses</h3>
+              <h3>Free API Access</h3>
               <p>Lightning-fast payment processing and real-time updates</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
                 <svg
-                  viewBox="0 0 24 24"
+                  className="w-[30px] h-[30px] text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
                   fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="8.5" cy="7" r="4"></circle>
-                  <path d="M20 8v6M23 11h-6"></path>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M8.891 15.107 15.11 8.89m-5.183-.52h.01m3.089 7.254h.01M14.08 3.902a2.849 2.849 0 0 0 2.176.902 2.845 2.845 0 0 1 2.94 2.94 2.849 2.849 0 0 0 .901 2.176 2.847 2.847 0 0 1 0 4.16 2.848 2.848 0 0 0-.901 2.175 2.843 2.843 0 0 1-2.94 2.94 2.848 2.848 0 0 0-2.176.902 2.847 2.847 0 0 1-4.16 0 2.85 2.85 0 0 0-2.176-.902 2.845 2.845 0 0 1-2.94-2.94 2.848 2.848 0 0 0-.901-2.176 2.848 2.848 0 0 1 0-4.16 2.849 2.849 0 0 0 .901-2.176 2.845 2.845 0 0 1 2.941-2.94 2.849 2.849 0 0 0 2.176-.901 2.847 2.847 0 0 1 4.159 0Z"
+                  />
                 </svg>
               </div>
-              <h3>Easy Account User Management</h3>
+              <h3>Transaction Fees reduced down to 0%</h3>
               <p>Simple dashboard for managing customers and transactions</p>
             </div>
             <div className="feature-card">
@@ -262,7 +287,7 @@ function ChargilyPay() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
               </div>
-              <h3>Free & Open Source Plugins</h3>
+              <h3>Free & Open source Plugins</h3>
               <p>Access to comprehensive plugin library at no extra cost</p>
             </div>
           </div>

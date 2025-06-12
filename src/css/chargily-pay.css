@@ -398,7 +398,7 @@
   margin-bottom: 3rem;
 }
 
-.payment-icons {
+.payment-icons-cp {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -406,7 +406,7 @@
   flex-wrap: wrap;
 }
 
-.payment-icon {
+.payment-icon-cp {
   width: 80px;
   height: 50px;
   background: white;
@@ -415,7 +415,13 @@
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-light);
-  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.payment-icon-cp img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .payment-icon.paypal {
@@ -481,8 +487,8 @@
 }
 
 .feature-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: var(--main-color);
 }
 
