@@ -6,7 +6,7 @@
 .footer {
   background: white;
   color: black;
-  margin-top: 4rem;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   border-left-width: 1px;
@@ -20,7 +20,6 @@
   border-right-style: solid;
   bottom: 15px;
   width: 1650px;
-  left: 200px;
 }
 
 .footer::before {

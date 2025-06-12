@@ -331,11 +331,69 @@ function AboutUs() {
       color: "white",
       border: "2px solid white",
     },
+    mapSection: {
+      marginTop: "5rem",
+      background: "linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%)",
+      borderRadius: "24px",
+      padding: "4rem 3rem",
+      position: "relative",
+      overflow: "hidden",
+    },
+    mapContainer: {
+      width: "100%",
+      height: "500px",
+      borderRadius: "20px",
+      overflow: "hidden",
+      boxShadow: "0 20px 40px rgba(100, 18, 153, 0.15)",
+      marginBottom: "3rem",
+    },
+    officesGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+      gap: "2rem",
+    },
+    officeCard: {
+      background: "white",
+      borderRadius: "20px",
+      padding: "2rem",
+      textAlign: "center",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+      border: "2px solid transparent",
+      transition: "all 0.3s ease",
+      cursor: "pointer",
+    },
+    officeCardHover: {
+      borderColor: "#641299",
+      transform: "translateY(-5px)",
+      boxShadow: "0 20px 40px rgba(100, 18, 153, 0.15)",
+    },
+    officeFlag: {
+      fontSize: "3rem",
+      marginBottom: "1rem",
+      display: "block",
+    },
+    officeCity: {
+      fontSize: "1.4rem",
+      fontWeight: "600",
+      color: "#641299",
+      marginBottom: "0.5rem",
+    },
+    officeCountry: {
+      fontSize: "1.1rem",
+      color: "#6b7280",
+      marginBottom: "1rem",
+    },
+    officeAddress: {
+      color: "#6b7280",
+      lineHeight: "1.6",
+      fontSize: "0.95rem",
+    },
   };
 
   const [hoveredService, setHoveredService] = React.useState(null);
   const [hoveredValue, setHoveredValue] = React.useState(null);
   const [hoveredTimeline, setHoveredTimeline] = React.useState(null);
+  const [hoveredOffice, setHoveredOffice] = React.useState(null);
 
   return (
     <div style={styles.aboutContainer}>
@@ -625,6 +683,97 @@ function AboutUs() {
           >
             Try Our App
           </a>
+        </div>
+      </div>
+
+      {/* Office Locations Map Section */}
+      <div style={styles.mapSection}>
+        <h2
+          style={{
+            ...styles.sectionTitle,
+            color: "#641299",
+            marginBottom: "3rem",
+          }}
+        >
+          Our Global Presence 🌍
+        </h2>
+
+        {/* Interactive Map */}
+        <div style={styles.mapContainer}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24177018.09456408!2d-13.402003909475191!3d43.59810344337848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM1JzUzLjIiTiAwwrAwMCcwMC4wIkU!5e0!3m2!1sen!2sus!4v1625151234567!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Chargily Office Locations"
+          ></iframe>
+        </div>
+
+        {/* Office Cards */}
+        <div style={styles.officesGrid}>
+          {[
+            {
+              flag: "🇬🇧",
+              city: "London",
+              country: "United Kingdom",
+              address:
+                "CHARGILY, LTD. C N°: 13860928 London, WC2H 9JQ United Kingdom (UK)",
+              description:
+                "Our European headquarters, driving innovation across the continent!",
+            },
+            {
+              flag: "🇩🇿",
+              city: "M'sila",
+              country: "Algeria",
+              address:
+                "CHARGILY, EURL. RC N°: 15B0564073 M’sila, 28020 Algeria (DZ)",
+              description: "Our home base, where it all started",
+            },
+            {
+              flag: "🇺🇸",
+              city: "Delaware",
+              country: "United States",
+              address:
+                "CHARGILY, LLC. File N: 6591212 Delaware, 19702 United States (US)",
+              description:
+                "Our American operations center, connecting us to global markets!",
+            },
+          ].map((office, index) => (
+            <div
+              key={index}
+              style={{
+                ...styles.officeCard,
+                ...(hoveredOffice === index ? styles.officeCardHover : {}),
+              }}
+              onMouseEnter={() => setHoveredOffice(index)}
+              onMouseLeave={() => setHoveredOffice(null)}
+            >
+              <span style={styles.officeFlag}>{office.flag}</span>
+              <h3 style={styles.officeCity}>{office.city}</h3>
+              <p style={styles.officeCountry}>{office.country}</p>
+              <p style={styles.officeAddress}>
+                {office.address.split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < office.address.split("\n").length - 1 && <br />}
+                  </span>
+                ))}
+              </p>
+              <p
+                style={{
+                  color: "#641299",
+                  marginTop: "1rem",
+                  fontStyle: "italic",
+                  fontSize: "0.9rem",
+                }}
+              >
+                {office.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
