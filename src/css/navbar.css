@@ -1,0 +1,188 @@
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+
+.navbar {
+  background-color: white;
+  color: var(--main-color);
+  margin-top: 10px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 5px 100px 5px 0;
+  font-weight: 600;
+}
+
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  margin-top: 3px;
+}
+
+.navbar-extras {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-docs {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-right: 180px;
+}
+
+.navbar-app {
+  padding: 5px 20px;
+  background-color: var(--main-color);
+  color: white;
+  border: 2px solid var(--main-color);
+  border-radius: var(--button-radius);
+  text-decoration: none;
+  margin-right: 200px;
+  transition: all 0.2s ease;
+}
+
+.navbar-app:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+
+.navbar-language {
+  padding: 6px 10px;
+  border: 1px solid var(--main-color);
+  background-color: white;
+  color: var(--main-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.network-logos {
+  height: 65px;
+  width: auto;
+  margin: 0 13px 0 12px;
+}
+
+/* ==========================================================================
+   DROPDOWN MENU
+   ========================================================================== */
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-title {
+  display: flex;
+  align-items: center;
+  padding: 7px 13px;
+  margin: 2px 0;
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border: 2px solid var(--main-color);
+  border-radius: 25px;
+}
+
+.dropdown-title::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--main-color);
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-title::after {
+  transform: rotate(180deg);
+}
+
+.dropdown:hover .dropdown-title {
+  background-color: #f8f4ff;
+  color: #4c1d95;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-heavy);
+  border: 1px solid var(--border-gray);
+  padding: 8px 0 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f4ff;
+  color: var(--main-color);
+  border-left-color: var(--main-color);
+  padding-left: 1.5rem;
+}
+
+.dropdown-menu li:first-child .dropdown-item {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dropdown-menu li:last-child .dropdown-item {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Animation delays for dropdown items */
+.dropdown-menu li:nth-child(1) .dropdown-item {
+  animation-delay: 0.05s;
+}
+.dropdown-menu li:nth-child(2) .dropdown-item {
+  animation-delay: 0.1s;
+}
+.dropdown-menu li:nth-child(3) .dropdown-item {
+  animation-delay: 0.15s;
+}
+.dropdown-menu li:nth-child(4) .dropdown-item {
+  animation-delay: 0.2s;
+}

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   FONTS & VARIABLES
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "Alexandria";
+  src: url("/src/assets/Alexandria-VariableFont_wght.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/src/assets/DMSans-VariableFont_opsz_wght.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --big-font: "DM Sans", sans-serif;
+  --main-font: "Alexandria", sans-serif;
+  --main-color: #641299;
+  --border-radius: 18px;
+  --button-radius: 25px;
+  --light-gray: #f8f9fa;
+  --medium-gray: #6c757d;
+  --border-gray: #e5e7eb;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
+body {
+  font-family: var(--main-font);
+  margin: 0 180px;
+}

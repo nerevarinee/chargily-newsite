@@ -1,0 +1,234 @@
+/* ==========================================================================
+   PAYMENT METHODS PAGE
+   ========================================================================== */
+
+.payment-methods-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 2rem 0;
+}
+
+.payment-methods-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.payment-methods-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.payment-methods-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.payment-methods-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Payment Method Cards */
+.payment-method-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.payment-method-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.main-card {
+  background: linear-gradient(135deg, #6366f1 0%, var(--main-color) 100%);
+  color: white;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.card-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.card-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+/* Payment Icons */
+.payment-icon {
+  width: 100px;
+  height: 60px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-light);
+  padding: 0.5rem;
+}
+
+.payment-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.payment-icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Payment Method Buttons */
+.get-chargily-btn {
+  background: white;
+  color: var(--main-color);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--button-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.get-chargily-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-btn {
+  background: var(--main-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background: #7c1ac4;
+  transform: translateY(-1px);
+}
+
+.card-content-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 300px;
+}
+
+.card-content-horizontal.reverse .card-text {
+  order: 1;
+}
+
+.card-content-horizontal.reverse .card-image {
+  order: 2;
+}
+
+.card-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-family: var(--big-font);
+}
+
+.card-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.phone-mockup,
+.mobile-device {
+  width: 180px;
+  height: 320px;
+  background: #1f2937;
+  border-radius: 24px;
+  padding: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.phone-screen,
+.device-screen {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border: 2px solid var(--border-gray);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-pattern {
+  width: 100px;
+  height: 100px;
+  background-image: repeating-linear-gradient(
+      0deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #000,
+      #000 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  opacity: 0.8;
+}
