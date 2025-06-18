@@ -28,7 +28,7 @@ function App() {
           {/* Define routes for each page */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/vouchers" element={<Vouchers />} />
+            {/* Top Section <Route path="/vouchers" element={<Vouchers />} />*/}
             <Route path="/payments" element={<Payments />} />
             <Route path="/topup" element={<Topup />} />
             <Route path="/credit-rewards" element={<CreditRewards />} />

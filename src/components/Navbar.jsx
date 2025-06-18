@@ -25,7 +25,6 @@ function Navbar() {
         <DropdownMenu
           title="Personal"
           items={[
-            { label: "Vouchers", path: "/vouchers" },
             { label: "Payments", path: "/payments" },
             { label: "Top-Up", path: "/topup" },
             { label: "Credit & Rewards", path: "/credit-rewards" },

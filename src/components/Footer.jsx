@@ -12,9 +12,9 @@ function Footer() {
             <div className="footer-column">
               <h3 className="footer-column-title">Personal</h3>
               <ul className="footer-list">
-                <li>
+                {/* Top Section <li>
                   <Link to="/vouchers">Vouchers</Link>
-                </li>
+                </li>*/}
                 <li>
                   <Link to="/payments">Payments</Link>
                 </li>
